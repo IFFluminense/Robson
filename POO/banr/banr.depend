@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1708459450 source:c:\rodrigo\banr\main.c
+	<stdio.h>
+	<stdlib.h>
+

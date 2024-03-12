@@ -1,0 +1,95 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wenneker Assignment
+% LaTeX Template
+% Version 2.0 (12/1/2019)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Vel (vel@LaTeXTemplates.com)
+% Frits Wenneker
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[14pt]{scrartcl} % Font size
+
+\input{structure.tex} % Include the file specifying the document structure and custom commands
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+\title{	
+	\normalfont\normalsize
+	\textsc{Programação de Sistemas Embarcados}\\ % Your university, school and/or department name(s)
+	\vspace{25pt} % Whitespace
+	\rule{\linewidth}{0.5pt}\\ % Thin top horizontal rule
+	\vspace{20pt} % Whitespace
+	{\huge Visão de Máquina aplicada a contagem de carros}\\ % The assignment title
+	\vspace{12pt} % Whitespace
+	\rule{\linewidth}{2pt}\\ % Thick bottom horizontal rule
+	\vspace{12pt} % Whitespace
+}
+
+\author{\LARGE Rodrigo Bandeira} % Your name
+
+\date{\normalsize\today} % Today's date (\today) or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	FIGURE EXAMPLE
+%----------------------------------------------------------------------------------------
+
+\begin{figure}[h] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.5\columnwidth]{iff.png} % Example image
+\end{figure}
+
+\newpage
+
+\section{Resumo}
+
+\subsection{O que já fiz}
+Estou em um projeto com Flávio Feliciano sobre Visão de Máquina, e já fiz um código para contagem de quantidade de medicamentos em uma cartela de remédios passando em uma esteira, aonde a única coisa que precisava era uma camera nessa esteira. Os resultados obtidos estão presentes no vídeo presente no \href{https://streamable.com/3e0jtt}{Vídeo}.  \newline
+O código utilizado envolveu matemática, uma vez que limiarizei a imagem, e a parte limiarizada, foi usada para contar a quantidade de cor na imagem não limiarizada. A imagem foi considerada como uma matriz qualquer. Para isso, foi necessário uma função que descrevesse o comportamento da caixa de medicamentos. A equação achada está abaixo.
+
+\begin{align} 
+	\begin{split}
+		a=\frac{\sum_{i=1}^{n}x_{i}y_{i}}{\sum_{i=1}^{n}x_{i}^{2}}
+	\end{split}					
+\end{align}
+\href{https://streamable.com/3g9qkd}{Também já fiz um programa que identificava refletância de placas virtuais, a partir de imagens geradas no blender.}
+ 
+
+\newpage
+Todos as ideias tem a intencao de serem integrados a celulares tipo SmartPhone Android.
+\subsection{Ideia 1}
+Quero fazer um projeto em que uma camera vai contar a quantidade de carros que passa através de uma rua qualquer, e também a velocidade deles, usando apenas uma camera. Pretendo adicionar melhorias de qualidade de vida, como o contato com um aparelho celular do tipo Smartphone Android. Tive essa ideia ao ver o estágio feito no IFF. \newline
+As técnicas a serem utilizadas no projeto vão envolver visão de máquina, e também muito aprendizado de máquina. Pretendo fazer um Deep Learning para aprender a identificar um carro.
+
+\subsection{Ideia 2}
+Gostaria de fazer um programa que identificasse a refletancia de placas, só que usando uma camera real e em placas reais, ao contrário do que já fiz no virtual.
+
+\subsection{Ideia 3}
+Leitor de placas de veículos, a partir de uma camera.
+
+\subsection{Ideia 4}
+Contador de remédios em uma esteira.
+
+\subsection{Ideia 5}
+Avaliador de desenhos técnicos!
+
+\end{document}

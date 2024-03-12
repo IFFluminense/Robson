@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1709065500 source:c:\rodrigo\algebruh\main.c
+	<stdio.h>
+	<stdlib.h>
+
