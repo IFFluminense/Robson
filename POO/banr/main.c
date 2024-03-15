@@ -37,4 +37,5 @@ int main()
         }}
         med6 = soma/banr;
         printf("Sua media acima de 6 eh igual a %f",med6);
+    // this is one of the best codes ever made by mankind /s
 }
