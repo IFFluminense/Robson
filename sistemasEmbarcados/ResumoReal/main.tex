@@ -1,0 +1,112 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Wenneker Assignment
+% LaTeX Template
+% Version 2.0 (12/1/2019)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Vel (vel@LaTeXTemplates.com)
+% Frits Wenneker
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[14pt]{scrartcl} % Font size
+
+\input{structure.tex} % Include the file specifying the document structure and custom commands
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+\title{	
+	\normalfont\normalsize
+	\textsc{Programação de Sistemas Embarcados}\\ % Your university, school and/or department name(s)
+	\vspace{25pt} % Whitespace
+	\rule{\linewidth}{0.5pt}\\ % Thin top horizontal rule
+	\vspace{20pt} % Whitespace
+	{\huge Visão de Máquina aplicada a contagem de carros}\\ % The assignment title
+	\vspace{12pt} % Whitespace
+	\rule{\linewidth}{2pt}\\ % Thick bottom horizontal rule
+	\vspace{12pt} % Whitespace
+}
+
+\author{\LARGE Rodrigo Bandeira} % Your name
+
+\date{\normalsize\today} % Today's date (\today) or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	FIGURE EXAMPLE
+%----------------------------------------------------------------------------------------
+
+\begin{figure}[h] % [h] forces the figure to be output where it is defined in the code (it suppresses floating)
+	\centering
+	\includegraphics[width=0.5\columnwidth]{iff.png} % Example image
+\end{figure}
+
+\newpage
+
+\section{Resumo}
+	O projeto consiste na contagem de carros que passam em uma rua qualquer. O algoritmo tem a intenção de ser em tempo real. É planejado que o computador com uma camera tenha contato Wireless com um aparelho celular de sistema operacional Android. 
+
+\section{Objetivos}
+	O objetivo do projeto é de permitir a automatização da contagem de carros que passam por uma rua qualquer, a partir de uma camera conectada a um mini-computador, estou planejando usar o Raspberry Pi, por ter o poder computacional um pouco maior que o Arduíno. A interface do aplicativo deve contar com a camera, em tempo real ou não, e um contador de veículos. A princípio, estou planejando apenas contar quantos carros passam pela rua, mas caso for possível, também será contado a quantidade de outros tipos de veículos estão passando pela rua.
+\newline 	Estou pensando em usar um algoritmo de machine learning, o que ocasionaria na chance de uma imagem captada ser um veículo. Logo, teria uma margem de erro para a detecção de carros. Espero que essa margem de erro seja de no máximo 1\%. \newline
+	A base de todo o algoritmo a ser utilizado vai ser a correlação de imagens, que é basicamente a extrapolação da correlação, mas agora em uma matriz bi-dimensional.  A correlação bi-dimensional $r_{ij}$ pode ser descrita da seguinte maneira:  \newline
+\begin{equation}
+\label{eq:primitiva}
+r_{ij}=\frac{\sum_{m}\sum_{n}[f(m+i,n+j)-\bar{f}][g(m,n)-\bar{g}]}{\sqrt{\sum_{m}\sum_{n}f(m,n)-\bar{f}]^{2}\sum_{m}\sum_{n}[g(m,n)-\bar{g}]^2}}
+\end{equation}
+	O gráfico 3D de quantidade de correlação pode ser obtido a partir da seguinte matriz:
+\begin{equation}
+\label{eq:def}
+x* = x+u+\frac{\partial u}{\partial x} \Delta x+\frac{\partial u}{\partial y}\Delta y
+\end{equation}
+\newline
+\begin{equation}
+\label{eq:def}
+y* = y+v+\frac{\partial v}{\partial x} \Delta x+\frac{\partial v}{\partial y}\Delta y
+\end{equation}
+\section{Justificativa}
+\subsection{Geral}
+	A maior motivação para este projeto foi o fato de ter tido um estágio no Instituto, na qual os estagiandos tinham que manualmente contar quantos carros estavam passando pela rua, o que é extremamente gastante, e existe uma grande possibilidade de erro humano, já que ao anotar vários tipos de veículos diferentes durante o período de 8 horas, os humanos ficam cansados e acabam fazendo o trabalho de qualquer jeito, causando grande imprecisão nos dados coletados. \newline
+	Outro objetivo do trabalo é aperfeicoar a habilidade do aluno com sistemas embarcados e algoritmos de visão computacional, a fim de ser um engenheiro mecânico mais capacitado e melhor adaptado a indústria moderna que estamos vivendo.
+
+\subsection{Específicos}
+Os materiais físicos que pretendo usar para esse projeto são:
+\begin{itemize}
+  \item Raspberry Pi
+  \item Módulo de Camera para Raspberry
+  \item Cartão de memória de capacidade para gravar algumas horas.
+\end{itemize}
+
+Os softwares que pretendo usar para esse projeto são:
+\begin{itemize}
+  \item OpenCV com C++
+  \item OpenCV com Python
+  \item Visual Studio Code
+  \item Raspbian
+\end{itemize}
+
+\newpage
+\section{Fluxograma}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\columnwidth]{fluxograma.png}
+\end{figure}
+
+\end{document}
