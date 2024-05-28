@@ -41,7 +41,8 @@ class SENHA extends JFrame implements ActionListener
    {  
     if (P1.getText().equals("JAVA")){
      T1.setText("Senha Valida");
-     Path 
+     Path privado = Path.of("C:/Users/aluno.IFFALUNOS/Desktop/aula2805/file.txt");
+     String content = Files.readString(filePath);
      System.exit(0);}
     else    
      T1.setText("Senha Invalida");  
