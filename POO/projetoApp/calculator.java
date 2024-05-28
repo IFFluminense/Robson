@@ -58,6 +58,9 @@ class calculator implements ActionListener{
     f.setLayout(null);f.setVisible(true);f.setSize(800, 600);f.setLocation(500,200);
     
     f.addWindowListener(new WindowAdapter() {public void windowClosing(WindowEvent e) {System.exit(0);}});
+    
+    t2.setEnabled(false);
+    t3.setEnabled(false);
     }
     
     public void actionPerformed(ActionEvent e){
@@ -65,6 +68,8 @@ class calculator implements ActionListener{
     //double n2 = Float.parseFloat(t2.getText());
     
     double n1;double n2;int state1, state2;
+    
+
 
     try{n1 = Float.parseFloat(t1.getText()); state1 = 1;} 
     catch (NumberFormatException ex) {n1 = 0.0; state1 = 0;}
@@ -75,15 +80,15 @@ class calculator implements ActionListener{
     if (state1 == 0){
         b1.setEnabled(false); b2.setEnabled(false); b3.setEnabled(false);
         b4.setEnabled(false); b5.setEnabled(false); b6.setEnabled(false); b7.setEnabled(false); b8.setEnabled(false);
-        b9.setEnabled(false); b10.setEnabled(false); b11.setEnabled(false);
+        b9.setEnabled(false); b10.setEnabled(false);  t2.setEnabled(false); t3.setEnabled(false);
     } else if(state1 == 1){
     if(state2 == 0){
-        b1.setEnabled(false); b2.setEnabled(false); b3.setEnabled(false);
+        b1.setEnabled(false); b2.setEnabled(false); b3.setEnabled(false); t2.setEnabled(true);
         b4.setEnabled(false); b5.setEnabled(true); b6.setEnabled(true); b7.setEnabled(true); b8.setEnabled(true);
-        b9.setEnabled(true); b10.setEnabled(false); b11.setEnabled(false);} else{
+        b9.setEnabled(true); b10.setEnabled(false); b11.setEnabled(true);} else{
         b1.setEnabled(true); b2.setEnabled(true); b3.setEnabled(true);
-        b4.setEnabled(true); b5.setEnabled(true); b6.setEnabled(true); b7.setEnabled(true); b8.setEnabled(true);
-        b9.setEnabled(true); b10.setEnabled(true); b11.setEnabled(true);
+        b4.setEnabled(true); b5.setEnabled(false); b6.setEnabled(false); b7.setEnabled(false); b8.setEnabled(false);
+        b9.setEnabled(false); b10.setEnabled(true); b11.setEnabled(true); t2.setEnabled(true);
     }
     }
     
@@ -94,10 +99,12 @@ class calculator implements ActionListener{
     if(e.getSource()==b5){if(n1>0){t2.setText(""); t3.setText(String.valueOf(banr.factorial((int)n1)));} else {t3.setText("Numero invalido");}}
     if(e.getSource()==b6){t3.setText(String.valueOf(banr.sin(n1))); t2.setText("");}
     if(e.getSource()==b7){t3.setText(String.valueOf(banr.cos(n1))); t2.setText("");}
-    if(e.getSource()==b8){t3.setText(String.valueOf(banr.cos(n1))); t2.setText("");}
+    if(e.getSource()==b8){t3.setText(String.valueOf(Math.tan(n1))); t2.setText("");}
     if(e.getSource()==b9){t3.setText(String.valueOf(banr.sqrt(n1))); t2.setText("");}
     if(e.getSource()==b10){t3.setText(String.valueOf(banr.pot(n1, n2)));}
-    if(e.getSource()==b11){t2.setText(""); t1.setText(""); t3.setText("");}
+    if(e.getSource()==b11){t2.setText(""); t1.setText(""); t3.setText(""); b1.setEnabled(false); b2.setEnabled(false); b3.setEnabled(false);
+        b4.setEnabled(false); b5.setEnabled(false); b6.setEnabled(false); b7.setEnabled(false); b8.setEnabled(false);
+        b9.setEnabled(false); b10.setEnabled(false);  t2.setEnabled(false); t3.setEnabled(false);}
     
     }
     

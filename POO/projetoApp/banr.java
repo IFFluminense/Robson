@@ -9,12 +9,14 @@ public class banr {
         return result;}
         
     public static double sin(double a) {
+        
 
     if (a == Double.NEGATIVE_INFINITY || !(a < Double.POSITIVE_INFINITY)) {
         return Double.NaN;
     }
 
     final double PI = 3.14159265358979323846;
+    a = a*PI/180;
     a %= 2 * PI;
     if (a < 0) {
         a = 2 * PI - a;
@@ -24,11 +26,12 @@ public class banr {
         a -= PI;
         sign = -1;
     }
-    final int PRECISION = 10;
+    final int PRECISION = 30;
     double temp = 0;
     for (int i = 0; i <= PRECISION; i++) {
         temp += Math.pow(-1, i) * (Math.pow(a, 2 * i + 1) / factorial(2 * i + 1));
     }
+    double result = sign * temp;
     return sign * temp;}
     
     public static double cos(double a){
